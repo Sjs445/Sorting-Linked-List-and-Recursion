@@ -3,6 +3,7 @@
 #define LINKEDLIST_H
 
 #include <string>
+#include <fstream>
 
 using namespace std;
 
@@ -22,7 +23,13 @@ public:
     ~linkedlist(); // RECURSIVE
     void addToFront(int n);
     double average(); // uses sum and count functions
-    void writeInorder(string & file);
-    void writeReversed(string & file);
+    void writeInorder(ofstream & outData);
+    void writeReversed(ofstream & outData);
+    void writeReversed(node * ptr, ofstream & outData);
+    void deleteNode(node * ptr);
+    void insertInOrder(int num);
+    void printList();
+    int sum(node *);
+    int count(node *);
 };
 #endif // end linkedlist.h
